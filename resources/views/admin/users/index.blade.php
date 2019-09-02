@@ -5,6 +5,7 @@
             <thead class="text-success">
             <tr class="text-center">
                 <th>ID</th>
+                <th>Photo</th>
                 <th>Name</th>
                 <th>E-mail</th>
                 <th>Role</th>
@@ -19,14 +20,16 @@
                 @foreach($users as $user)
             <tr>
                 <td>{{$user->id}}</td>
+                <td><img height="50px" src="{{$user->photo ? $user->photo->file : '/images/placehoder.jpg'}}" alt="" class="img-circle"></td>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
                 <td>{{$user->role->name}}</td>
-
                 <td>{{$user->is_active == 1 ? "Active" : "Not Active"}}</td>
                 <td>{{$user->created_at->diffForHumans()}}</td>
                 <td>{{$user->updated_at->diffForHumans()}}</td>
-                <td><span class="glyphicon glyphicon-edit text-primary updateteacher" id=""></span><small>&nbsp;&nbsp;|&nbsp;&nbsp;</small><span class="glyphicon glyphicon-trash text-danger deleteteacher" id=""></span></td>
+
+
+                <td><a href="{{route('users.edit',$user->id)}}"><span class="glyphicon glyphicon-edit text-primary updateteacher" id=""></span></a><small>&nbsp;&nbsp;|&nbsp;&nbsp;</small><span class="glyphicon glyphicon-trash text-danger deleteteacher" id=""></span></td>
             </tr>
                 @endforeach()
             @endif()

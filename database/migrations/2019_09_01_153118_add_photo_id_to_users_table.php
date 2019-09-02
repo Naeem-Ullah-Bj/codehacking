@@ -15,7 +15,7 @@ class AddPhotoIdToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->integer('photo_id')->nullable();
+            $table->integer('photo_id');
         });
     }
 

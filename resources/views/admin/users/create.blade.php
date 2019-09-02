@@ -14,25 +14,13 @@
         {!! Form::label('status','Status:') !!}
         {!! Form::select('is_active',array(1=>'Active',0=>'Not Active'),0,['class'=>'form-control']) !!}
         {!! Form::label('file','File:') !!}
-        {!! Form::file('file',null,['class'=>'form-control']) !!}
+        {!! Form::file('photo_id',null,['class'=>'form-control']) !!}
 
         <br>
         {!! Form::submit('Create User',['class'=>'btn btn-info']) !!}
     </div>
     {!! Form::close() !!}
-<div>
-    @if(count($errors)>0)
-        <div class="alert-danger col-sm-8">
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>
-                        {{$error}}
-                    </li>
-                @endforeach()
-            </ul>
-        </div>
-    @endif()
-</div>
+@include('include.form_error')
 @endsection()
 @section('footer')
 
