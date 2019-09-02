@@ -5,6 +5,10 @@
 .user-row {
     margin-bottom: 14px;
 }
+#admin-page
+{
+    padding-top: initial;
+}
 
 .user-row:last-child {
     margin-bottom: 0;
@@ -13,7 +17,7 @@
 .dropdown-user {
     margin: 13px 0;
     padding: 5px;
-    height: 100%;
+    height: auto;
 }
 
 .dropdown-user:hover {
