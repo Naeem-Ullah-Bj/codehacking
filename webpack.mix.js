@@ -17,6 +17,7 @@ mix.styles([
     'resources/assets/sass/libs/styles.css',
     'resources/assets/sass/libs/blog-post.css',
     'resources/assets/sass/libs/bootstrap.css',
+    'resources/assets/sass/libs/jquery.toast.min.css',
     'resources/assets/sass/libs/font-awesome.css',
     'resources/assets/sass/libs/sb-admin-2.css',
     'resources/assets/sass/libs/metisMenu.css'
@@ -24,6 +25,7 @@ mix.styles([
 ],'public/css/app.css');
 mix.scripts([
     'resources/assets/js/libs/jquery.js',
+    'resources/assets/js/libs/jquery.toast.min.js',
     'resources/assets/js/libs/metisMenu.js',
     'resources/assets/js/libs/sb-admin-2.js',
     'resources/assets/js/libs/scripts.js',

@@ -19,4 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('admin/users','AdminUserController');
+Route::group(['middleware'=>'admin'],function (){
+    Route::get('/admin/users/{id}','AdminUserController@destroy');
+    Route::resource('admin/users','AdminUserController');
+
+});
+

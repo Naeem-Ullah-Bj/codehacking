@@ -8,6 +8,7 @@ use App\Photo;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminUserController extends Controller
 {
@@ -74,11 +75,7 @@ class AdminUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-        return view('admin.users.show');
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -129,10 +126,23 @@ class AdminUserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return string
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        if ($user->photo)
+        {
+            unlink(public_path().$user->photo->file);
+        }
+        $user->delete();
+        Session::flash('destroy','Success');
+
+        return redirect('admin/users');
+    }
+
+    public function show($id)
+    {
+        return 'bye';
     }
 }
