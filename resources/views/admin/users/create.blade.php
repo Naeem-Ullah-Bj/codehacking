@@ -21,6 +21,7 @@
     </div>
     {!! Form::close() !!}
 @include('include.form_error')
+
 @endsection()
 @section('footer')
 

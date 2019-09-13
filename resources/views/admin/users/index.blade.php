@@ -32,7 +32,7 @@
 
 
                 <td><a href="{{route('users.edit',$user->id)}}"><span class="glyphicon glyphicon-edit text-primary updateteacher" id=""></span></a><small>&nbsp;&nbsp;|&nbsp;&nbsp;</small>
-                    <a href="{{$url = action('AdminUserController@destroy',$user->id)}}"  ><span class="glyphicon glyphicon-trash text-danger deleteteacher" id=""></span></a></td>
+                    <a href="{{url('AdminU',$user->id)}}"  ><span class="glyphicon glyphicon-trash text-danger deleteteacher" id=""></span></a></td>
             </tr>
                 @endforeach()
             @endif()
